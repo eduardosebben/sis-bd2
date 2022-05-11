@@ -22,30 +22,30 @@
     <div class="content">
         <h1>Bibliófilo's</h1>
 
-        <h2>Livros</h2>
+        <h2>Bibliotecas</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
-        $livro = 'Cod_Livro';
-        $titulo = 'Des_Titulo';
-        $classificacao = 'Cod_Classificacao';
-        $dtaCriacao = 'Dta_Criacao';
-        $autor = 'Cod_Autor';
+        $CodBiblioteca = 'Cod_Biblioteca';
+        $DesBiblioteca = 'Des_Biblioteca';
+        $leitor = 'Cod_leitor';
         $editora = 'Cod_Editora';
+        $livro = 'Cod_Livro';
+        $autor = 'Cod_Autor';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $livro .
-            '     , ' . $titulo .
-            '     , ' . $classificacao .
-            '     , ' . $dtaCriacao . 
-            '     , ' . $autor .
+            'SELECT ' . $CodBiblioteca .
+            '     , ' . $DesBiblioteca .
+            '     , ' . $leitor .
             '     , ' . $editora .
+            '     , ' . $livro .
+            '     , ' . $autor .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM livros';
+            '  FROM bibliotecas';
 
 
         $resultado = mysqli_query($conexao, $sql);
@@ -55,13 +55,12 @@
 
         $cabecalho =
             '<table style="width:100%">' .
-            '    <tr>' .
-            '        <th>' . $livro . '</th>' . 
-            '        <th>' . $titulo . '</th>' .
-            '        <th>' . $classificacao . '</th>' .
-            '        <th>' . $dtaCriacao . '</th>' .
-            '        <th>' . $autor . '</th>' .
+            '        <th>' . $CodBiblioteca . '</th>' . 
+            '        <th>' . $DesBiblioteca . '</th>' .
+            '        <th>' . $leitor . '</th>' .
             '        <th>' . $editora . '</th>' .
+            '        <th>' . $livro . '</th>' .                                    
+            '        <th>' . $autor . '</th>' .
             '    </tr>';
 
         echo $cabecalho;

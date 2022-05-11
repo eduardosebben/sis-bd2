@@ -22,30 +22,24 @@
     <div class="content">
         <h1>Bibliófilo's</h1>
 
-        <h2>Livros</h2>
+        <h2>Autores</h2>
         <?php
         require 'mysql_server.php';
 
         $conexao = RetornaConexao();
 
+        $leitura = 'Cod_Leitura';
         $livro = 'Cod_Livro';
-        $titulo = 'Des_Titulo';
-        $classificacao = 'Cod_Classificacao';
-        $dtaCriacao = 'Dta_Criacao';
-        $autor = 'Cod_Autor';
-        $editora = 'Cod_Editora';
+        $leitor = 'Cod_Leitor';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $livro .
-            '     , ' . $titulo .
-            '     , ' . $classificacao .
-            '     , ' . $dtaCriacao . 
-            '     , ' . $autor .
-            '     , ' . $editora .
+            'SELECT ' . $leitura .
+            '     , ' . $livro .
+            '     , ' . $leitor .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
-            '  FROM livros';
+            '  FROM leituras';
 
 
         $resultado = mysqli_query($conexao, $sql);
@@ -56,12 +50,9 @@
         $cabecalho =
             '<table style="width:100%">' .
             '    <tr>' .
-            '        <th>' . $livro . '</th>' . 
-            '        <th>' . $titulo . '</th>' .
-            '        <th>' . $classificacao . '</th>' .
-            '        <th>' . $dtaCriacao . '</th>' .
-            '        <th>' . $autor . '</th>' .
-            '        <th>' . $editora . '</th>' .
+            '        <th>' . $leitura . '</th>' .
+            '        <th>' . $livro . '</th>' .
+            '        <th>' . $leitor . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
