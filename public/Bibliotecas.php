@@ -70,10 +70,12 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
-                    /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>';
+                echo '<td>' . $registro[$CodBiblioteca] . '</td>' .
+                    '<td>' . $registro[$DesBiblioteca] . '</td>' .
+                    '<td>' . $registro[$leitor] . '</td>' .
+                    '<td>' . $registro[$editora] . '</td>' .
+                    '<td>' . $registro[$livro] . '</td>' .
+                    '<td>' . $registro[$autor] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';

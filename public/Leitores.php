@@ -28,14 +28,14 @@
 
         $conexao = RetornaConexao();
 
-        $CodLeitor = 'Cod_leitor';
-        $DesLeitor = 'Des_Leitor';
+        $leitor = 'Cod_leitor';
+        $Desleitor = 'Des_leitor';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
-            'SELECT ' . $CodLeitor .
-            '     , ' . $DesLeitor .
+            'SELECT ' . $leitor .
+            '     , ' . $Desleitor .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM leitores';
 
@@ -47,8 +47,9 @@
 
         $cabecalho =
             '<table style="width:100%">' .
-            '        <th>' . $CodLeitor . '</th>' . 
-            '        <th>' . $DesLeitor  . '</th>' .
+            '    <tr>' .
+            '        <th>' . $leitor . '</th>' .
+            '        <th>' . $Desleitor . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -58,10 +59,8 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
-                    /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>';
+                echo '<td>' . $registro[$leitor] . '</td>' .
+                    '<td>' . $registro[$Desleitor] . '</td>' ;
                 echo '</tr>';
             }
             echo '</table>';

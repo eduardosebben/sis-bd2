@@ -30,14 +30,12 @@
 
         $Codeditora = 'Cod_editora';
         $Deseditora = 'Des_editora';
-        $livro = 'Cod_livro';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
             'SELECT ' . $Codeditora .
             '     , ' . $Deseditora .
-            '     , ' . $livro .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM editora';
 
@@ -51,7 +49,6 @@
             '<table style="width:100%">' .
             '        <th>' . $Codeditora . '</th>' . 
             '        <th>' . $Deseditora . '</th>' .
-            '        <th>' . $livro . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -61,10 +58,8 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
-                    /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>';
+                echo '<td>' . $registro[$Codeditora] . '</td>' .
+                    '<td>' . $registro[$Deseditora] . '</td>' ;
                 echo '</tr>';
             }
             echo '</table>';

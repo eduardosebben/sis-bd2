@@ -29,15 +29,13 @@
         $conexao = RetornaConexao();
 
         $autor = 'Cod_autor';
-        $titulo = 'Des_autor';
-        $livro = 'Cod_livro';
+        $DesAutor = 'Des_autor';
         /*TODO-1: Adicione uma variavel para cada coluna */
 
 
         $sql =
             'SELECT ' . $autor .
-            '     , ' . $titulo .
-            '     , ' . $livro .
+            '     , ' . $DesAutor .
             /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM autores';
 
@@ -51,8 +49,7 @@
             '<table style="width:100%">' .
             '    <tr>' .
             '        <th>' . $autor . '</th>' .
-            '        <th>' . $titulo . '</th>' .
-            '        <th>' . $livro . '</th>' .
+            '        <th>' . $DesAutor . '</th>' .
             '    </tr>';
 
         echo $cabecalho;
@@ -62,10 +59,8 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
-                    /* TODO-4: Adicione a tabela os novos registros. */
-                    '<td>' . $registro[$classificacao] . '</td>';
+                echo '<td>' . $registro[$autor] . '</td>' .
+                    '<td>' . $registro[$DesAutor] . '</td>' ;
                 echo '</tr>';
             }
             echo '</table>';

@@ -44,7 +44,6 @@
             '     , ' . $dtaCriacao . 
             '     , ' . $autor .
             '     , ' . $editora .
-            /*TODO-2: Adicione cada variavel a consulta abaixo */
             '  FROM livros';
 
 
@@ -71,10 +70,12 @@
             while ($registro = mysqli_fetch_assoc($resultado)) {
                 echo '<tr>';
 
-                echo '<td>' . $registro[$titulo] . '</td>' .
-                    '<td>' . $registro[$autor] . '</td>' .
-                    /* TODO-4: Adicione a tabela os novos registros. */
+                echo '<td>' . $registro[$livro] . '</td>' .
+                    '<td>' . $registro[$titulo] . '</td>' .
                     '<td>' . $registro[$classificacao] . '</td>';
+                    '<td>' . $registro[$dtaCriacao] . '</td>';
+                    '<td>' . $registro[$autor] . '</td>';
+                    '<td>' . $registro[$editora] . '</td>';
                 echo '</tr>';
             }
             echo '</table>';
